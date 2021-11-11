@@ -9,11 +9,11 @@ var DBs = databases{
 	Dictionary: "dictionary",
 }
 
-type icTables struct {
+type dictionaryTables struct {
 	Entries string
 }
 
 // IC holds the tables within the IceCream DB
-var IC = icTables{
+var DT = dictionaryTables{
 	Entries: DBs.Dictionary + ".entries",
 }

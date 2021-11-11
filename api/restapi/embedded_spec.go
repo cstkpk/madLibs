@@ -35,6 +35,48 @@ func init() {
   },
   "basePath": "/",
   "paths": {
+    "/definition": {
+      "get": {
+        "description": "Retrieve a row from the entries table and any other entries of additional\ndefinitions for the same word.\n",
+        "tags": [
+          "definition"
+        ],
+        "summary": "Get the full definition for one word from the entries table",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "word",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Definition"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "500": {
+            "description": "Internal service error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          }
+        }
+      }
+    },
     "/ready": {
       "get": {
         "tags": [
@@ -65,6 +107,31 @@ func init() {
     }
   },
   "definitions": {
+    "Definition": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entry"
+          }
+        }
+      }
+    },
+    "Entry": {
+      "type": "object",
+      "properties": {
+        "definition": {
+          "type": "string"
+        },
+        "word": {
+          "type": "string"
+        },
+        "wordType": {
+          "type": "string"
+        }
+      }
+    },
     "ReturnCode": {
       "type": "object",
       "properties": {
@@ -98,6 +165,48 @@ func init() {
   },
   "basePath": "/",
   "paths": {
+    "/definition": {
+      "get": {
+        "description": "Retrieve a row from the entries table and any other entries of additional\ndefinitions for the same word.\n",
+        "tags": [
+          "definition"
+        ],
+        "summary": "Get the full definition for one word from the entries table",
+        "parameters": [
+          {
+            "type": "string",
+            "name": "word",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Definition"
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "500": {
+            "description": "Internal service error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          }
+        }
+      }
+    },
     "/ready": {
       "get": {
         "tags": [
@@ -128,6 +237,31 @@ func init() {
     }
   },
   "definitions": {
+    "Definition": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Entry"
+          }
+        }
+      }
+    },
+    "Entry": {
+      "type": "object",
+      "properties": {
+        "definition": {
+          "type": "string"
+        },
+        "word": {
+          "type": "string"
+        },
+        "wordType": {
+          "type": "string"
+        }
+      }
+    },
     "ReturnCode": {
       "type": "object",
       "properties": {

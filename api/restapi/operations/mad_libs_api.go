@@ -19,6 +19,7 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 
+	"github.com/cstkpk/dictionary/api/restapi/operations/definition"
 	"github.com/cstkpk/dictionary/api/restapi/operations/ready"
 )
 
@@ -44,6 +45,9 @@ func NewMadLibsAPI(spec *loads.Document) *MadLibsAPI {
 
 		JSONProducer: runtime.JSONProducer(),
 
+		DefinitionGetDefinitionHandler: definition.GetDefinitionHandlerFunc(func(params definition.GetDefinitionParams) middleware.Responder {
+			return middleware.NotImplemented("operation definition.GetDefinition has not yet been implemented")
+		}),
 		ReadyGetReadyHandler: ready.GetReadyHandlerFunc(func(params ready.GetReadyParams) middleware.Responder {
 			return middleware.NotImplemented("operation ready.GetReady has not yet been implemented")
 		}),
@@ -83,6 +87,8 @@ type MadLibsAPI struct {
 	//   - application/json
 	JSONProducer runtime.Producer
 
+	// DefinitionGetDefinitionHandler sets the operation handler for the get definition operation
+	DefinitionGetDefinitionHandler definition.GetDefinitionHandler
 	// ReadyGetReadyHandler sets the operation handler for the get ready operation
 	ReadyGetReadyHandler ready.GetReadyHandler
 
@@ -162,6 +168,9 @@ func (o *MadLibsAPI) Validate() error {
 		unregistered = append(unregistered, "JSONProducer")
 	}
 
+	if o.DefinitionGetDefinitionHandler == nil {
+		unregistered = append(unregistered, "definition.GetDefinitionHandler")
+	}
 	if o.ReadyGetReadyHandler == nil {
 		unregistered = append(unregistered, "ready.GetReadyHandler")
 	}
@@ -253,6 +262,10 @@ func (o *MadLibsAPI) initHandlerCache() {
 		o.handlers = make(map[string]map[string]http.Handler)
 	}
 
+	if o.handlers["GET"] == nil {
+		o.handlers["GET"] = make(map[string]http.Handler)
+	}
+	o.handlers["GET"]["/definition"] = definition.NewGetDefinition(o.context, o.DefinitionGetDefinitionHandler)
 	if o.handlers["GET"] == nil {
 		o.handlers["GET"] = make(map[string]http.Handler)
 	}

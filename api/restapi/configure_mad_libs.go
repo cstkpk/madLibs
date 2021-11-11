@@ -11,6 +11,7 @@ import (
 	"github.com/rs/cors"
 
 	"github.com/cstkpk/dictionary/api/restapi/operations"
+	"github.com/cstkpk/dictionary/api/restapi/operations/definition"
 	"github.com/cstkpk/dictionary/api/restapi/operations/ready"
 )
 
@@ -40,6 +41,9 @@ func configureAPI(api *operations.MadLibsAPI) http.Handler {
 
 	// GET /ready
 	api.ReadyGetReadyHandler = ready.GetReadyHandlerFunc(ready.Get)
+
+	// GET /definition
+	api.DefinitionGetDefinitionHandler = definition.GetDefinitionHandlerFunc(definition.Get)
 
 	api.PreServerShutdown = func() {}
 
