@@ -1,0 +1,44 @@
+---
+swagger: "2.0"
+consumes:
+  - application/json
+produces:
+  - application/json
+info:
+  title: mad-libs
+  version: 0.0.1
+  description: Mad Libs dictionary game
+schemes:
+  - http
+basePath: /
+
+paths:
+  /ready:
+    get:
+      tags:
+        - ready
+      summary: Verify that the API is running and ready to accept requests
+      responses:
+        200:
+          description: Success
+          schema:
+            $ref: "#/definitions/ReturnCode"
+        500:
+          description: Internal service error
+          schema:
+            $ref: "#/definitions/ReturnCode"
+        default:
+          description: Unexpected error
+          schema:
+            $ref: "#/definitions/ReturnCode"
+
+definitions:
+  ReturnCode:
+    type: object
+    properties:
+      code:
+        type: integer
+        readOnly: true
+      message:
+        type: string
+        readOnly: true
