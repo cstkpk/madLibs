@@ -1,0 +1,3 @@
+export const GET_DEFINITION = 'definition/GET_DEFINITION';
+export const GET_DEFINITION_SUCCESS = 'definition/GET_DEFINITION_SUCCESS';
+export const GET_DEFINITION_FAILURE = 'definition/GET_DEFINITION_FAILURE';

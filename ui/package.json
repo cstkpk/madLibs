@@ -12,6 +12,7 @@
 		"not dead"
 	],
 	"dependencies": {
+		"immer": "^9.0.6",
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
 		"react-helmet": "^6.1.0",

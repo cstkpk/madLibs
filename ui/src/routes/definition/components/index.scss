@@ -1,0 +1,57 @@
+@import "@global/sass/main";
+
+.title {
+  color: $colorGreyDark1;
+  font-family: "Yusei Magic", sans-serif;
+  font-size: $fsLarge;
+  text-align: center;
+}
+
+.text {
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(247, 247, 248, 0.8),
+      rgba(197, 214, 230, 0.8)
+    ),
+    url("./fog-1535201_1920.jpg");
+  background-size: cover;
+  background-position: center;
+
+  color: $colorGreyDark1;
+  font-family: "Yusei Magic", sans-serif;
+  font-size: $fsSmall;
+  width: 90%;
+  margin: auto;
+  line-height: 1.5rem;
+  padding-left: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  transition: all, 0.5s;
+
+  &:hover {
+    background-image: linear-gradient(
+        to right bottom,
+        darken(rgba(247, 247, 248, 0.8), 10),
+        darken(rgba(197, 214, 230, 0.8), 10)
+      ),
+      url("./fog-1535201_1920.jpg");
+  }
+}
+
+.text:hover {
+  .animateText {
+    animation: enlarge 1.5s ease-out;
+  }
+}
+
+@keyframes enlarge {
+  0% {
+    color: darken($colorGreyDark1, 5);
+  }
+  75% {
+    color: darken($colorGreyDark1, 20);
+  }
+  90% {
+    color: darken($colorGreyDark1, 3);
+  }
+}

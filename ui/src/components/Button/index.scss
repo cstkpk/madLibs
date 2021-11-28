@@ -1,0 +1,13 @@
+@import "@global/sass/main";
+
+.btn {
+  @include buttonBasics(18px, $colorGreyDark1, $colorGreyLight1);
+  padding: 12px 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 93%;
+  border: 1px solid $colorBlueDark;
+  @include buttonAnimation(translateY(-3px));
+}

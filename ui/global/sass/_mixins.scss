@@ -1,0 +1,26 @@
+@mixin buttonBasics($font-size, $color, $background-color) {
+  background-color: $background-color;
+  color: $color;
+  font-family: "Yusei Magic", sans-serif;
+  font-size: $fsDefault;
+  border-radius: 100px;
+}
+
+@mixin buttonAnimation($translateY) {
+  transition: all 0.5s;
+
+  &:hover {
+    transform: $translateY;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
