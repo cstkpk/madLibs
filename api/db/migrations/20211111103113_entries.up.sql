@@ -1,6 +1,6 @@
 CREATE TABLE dictionary.entries (
   id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  word VARCHAR(25) NOT NULL,
-  wordType VARCHAR(20) NOT NULL,
+  word VARCHAR(55) NOT NULL,
+  wordType VARCHAR(55) NOT NULL,
   definition TEXT NOT NULL
 );
