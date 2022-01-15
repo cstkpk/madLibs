@@ -1,0 +1,12 @@
+@import "@global/sass/main";
+
+.header {
+  background: linear-gradient(
+    to right bottom,
+    rgba($colorBlueLight, 0.8),
+    rgba($colorBlueDark, 1)
+  );
+  height: 20rem;
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 50%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 50%);
+}

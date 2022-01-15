@@ -1,0 +1,58 @@
+@import "@global/sass/main";
+
+.nav {
+  display: grid;
+  grid-template-areas: "left right";
+  padding: 2rem;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.navItem1 {
+  display: block;
+  position: relative;
+  grid-area: left;
+
+  color: $colorGreyLight1;
+  cursor: pointer;
+  font-family: $fontPrimary;
+  font-size: $fsXLarge;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: opacity 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.menu {
+  grid-area: right;
+  justify-self: end;
+  text-align: right;
+}
+
+.links {
+  display: block;
+  font-size: 1em;
+  text-decoration: none;
+  grid-area: right;
+  grid-template-columns: repeat(auto, 1fr);
+  grid-template-rows: auto;
+}
+
+.navItems {
+  color: $colorGreyLight1;
+  cursor: pointer;
+  font-family: $fontPrimary;
+  font-size: $fsLarge;
+  padding: 1rem;
+  text-decoration: none;
+  transition: opacity 0.5s;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}

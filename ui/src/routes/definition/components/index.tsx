@@ -18,10 +18,8 @@ const oneWordDefinition = () => {
     dispatch(actions.getDefinition());
   };
 
-  console.log(definition);
-
   return (
-    <>
+    <div className={styles.container}>
       <h3 className={styles.title}>Your word is... {definition[0].word != '' && (<>{definition[0].word}</>)}</h3>
       {definition[0].word != '' && (
         definition.map((d, i) => (
@@ -37,7 +35,7 @@ const oneWordDefinition = () => {
         onClick={() => handleDefinition()}
         text="Find a word!"
       />
-    </>
+    </div>
   )
 };
 

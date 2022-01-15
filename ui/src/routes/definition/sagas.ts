@@ -15,8 +15,6 @@ export function* getDefinition(action: ReturnType<typeof actions.getDefinition>)
     return;
   }
 
-  console.log(response.entries);
-
   if (response.entries) {
     yield put(actions.getDefinitionSuccess(response.entries));
   } else {
