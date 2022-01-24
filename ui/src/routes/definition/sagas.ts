@@ -4,7 +4,12 @@ import * as actions from './actions';
 import * as actionType from './actionTypes';
 
 export function* getDefinition(action: ReturnType<typeof actions.getDefinition>): any {
-  const response = yield fetch("http://localhost:6001/definition", {
+  let url = "http://localhost:6001/definition"
+  if (action.word !== undefined) {
+    url += `?word=${action.word}`
+  }
+  
+  const response = yield fetch(url, {
     headers: {
       "Content-Type": "application/json"
     },

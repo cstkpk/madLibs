@@ -1,0 +1,51 @@
+@import "@global/sass/main";
+
+.cardContainer {
+  width: 100%;
+  top: 10rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.card {
+  background-color: rgba($colorWhite, 0.8);
+  border: solid 0.5px rgba($colorBlueDark, 0.8);
+  padding: 2.5rem;
+  margin: 1rem 5rem;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($colorBlack, 0.15);
+  transition: transform 0.6s;
+
+  // &__icon {
+  //   font-size: 6rem;
+  //   margin-bottom: 0.5rem;
+  //   display: inline-block;
+  //   background-color: linear-gradient(
+  //     to right,
+  //     $colorBluePrimary,
+  //     $colorBlueDark
+  //   );
+  //   -webkit-background-clip: text; /* This mixed with making the text color transparent makes it so the background image appears as the text color */
+  //   background-clip: text;
+  //   color: transparent;
+  // }
+
+  &:hover {
+    transform: translateY(-1.5rem) scale(1.03);
+  }
+
+  h3 {
+    font-family: $fontPrimary;
+    font-size: $fsLarge;
+    color: $colorGreyDark2;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: $fontPrimary;
+    font-size: $fsDefault;
+    color: $colorGreyDark2;
+  }
+}

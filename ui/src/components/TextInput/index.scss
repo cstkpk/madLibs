@@ -1,0 +1,51 @@
+@import "@global/sass/main";
+
+.container {
+  width: 100%;
+}
+
+.label {
+  color: $colorGreyDark2;
+  display: block;
+  font-family: $fontPrimary;
+  font-size: $fsDefault;
+  margin-bottom: 0.4rem;
+}
+
+.input {
+  background-color: rgba($colorWhite, 0.8);
+  border: 1px solid $colorBlueDark;
+  border-radius: 2px;
+  box-sizing: border-box;
+  color: $colorGreyDark1;
+  font-family: $fontPrimary;
+  font-size: $fsDefault;
+  height: 4rem;
+  line-height: 1.5rem;
+  width: 92%;
+  padding: 12px 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  transition: border-color 0.2s ease-in-out;
+
+  &:focus {
+    border-color: $colorYellow;
+    outline: 0;
+  }
+
+  &::placeholder {
+    color: $colorGreyMedium1;
+  }
+}
+
+.error {
+  color: $colorRed;
+  font-size: $fsSmall2;
+  font-family: $fontPrimary;
+  padding-left: 4rem;
+  padding-top: 0rem;
+  padding-bottom: 0.5rem;
+}

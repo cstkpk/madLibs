@@ -9,7 +9,7 @@
 
 .title {
   color: $colorGreyLight2;
-  font-family: "Yusei Magic", sans-serif;
+  font-family: $fontPrimary;
   font-size: $fsLarge;
   text-align: center;
 }
@@ -38,7 +38,7 @@
 
 .text:hover {
   .animateText {
-    animation: darkenText 1.5s ease-out;
+    animation: darkenText 2.5s ease-out;
   }
 }
 
@@ -52,4 +52,18 @@
   90% {
     color: darken($colorGreyDark1, 3);
   }
+}
+
+.textInputContainer {
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.error {
+  color: $colorRed;
+  font-size: $fsSmall2;
+  font-family: $fontPrimary;
+  padding-left: 5rem;
+  padding-top: 0rem;
+  padding-bottom: 1rem;
 }

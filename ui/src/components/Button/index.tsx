@@ -6,6 +6,7 @@ interface Props {
   onClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   className?: string;
   text: string;
+  value?: string;
 }
 
 const Button = (props: Props) => {
@@ -13,6 +14,7 @@ const Button = (props: Props) => {
     <div className={styles.container}>
       <button
         className={`${props.className} ${styles.btn}`}
+        value={props.value}
         onClick={props.onClick}>
         {props.text}
       </button>
