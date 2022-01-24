@@ -29,11 +29,20 @@ const OneWordDefinition: React.FC<{}> = () => {
     dispatch(actions.getDefinition(values.word.trim()));
   }
 
+  // If there's an error message from a previous search and the user begins typing again
+  // clear the error message
   const handleChange = () => {
     if (error.message !== '') {
       dispatch(actions.clearError());
     }
   }
+
+  // If a get definition request is unsuccessful, clear any displayed definitions
+  React.useEffect(() => {
+    if (!getDefinitionRequest.fetching && !getDefinitionRequest.success) {
+      dispatch(actions.clearDefinition());
+    }
+  }, [getDefinitionRequest])
 
 
   return (
