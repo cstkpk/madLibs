@@ -19,6 +19,13 @@ const OneWordDefinition: React.FC<{}> = () => {
   const cardOption = useSelector(select.cardOption);
   const error = useSelector(select.error);
   const getDefinitionRequest = useSelector(select.getDefinitionRequest);
+ 
+  // On page load, clear card option so all cards appear, and clear any definitions and errors
+  React.useEffect(() => {
+    dispatch(actions.setCardOption(""));
+    dispatch(actions.clearDefinition());
+    dispatch(actions.clearError());
+  }, [])
 
   const handleDefinition = () => {
     dispatch(actions.getDefinition());

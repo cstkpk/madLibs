@@ -13,7 +13,7 @@ const Main = () => {
     <Navbar/>
     <Switch>
       <Route exact={true} path="/" component={Home} />
-      <Route exact={true} path="/one-word" component={Definition} />
+      <Route exact={true} path="/one-word" render={() => <Definition key={Date.now()}/>} />
     </Switch>
     </>
   );
