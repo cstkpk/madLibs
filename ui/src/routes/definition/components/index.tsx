@@ -64,6 +64,7 @@ const OneWordDefinition: React.FC<{}> = () => {
         <Button 
           onClick={() => handleDefinition()}
           text="Find a word!"
+          buttonAnimation="hover"
         />
         </>
       }
@@ -97,6 +98,7 @@ const OneWordDefinition: React.FC<{}> = () => {
               {error.message && <div className={styles.error}>{error.message}</div>}
               <Button 
                 text="Find this word!"
+                buttonAnimation="hover"
               />
             </form>
           )}

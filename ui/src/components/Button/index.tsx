@@ -7,13 +7,15 @@ interface Props {
   className?: string;
   text: string;
   value?: string;
+  buttonAnimation?: string;
 }
 
 const Button = (props: Props) => {
+  
   return (
     <div className={styles.container}>
       <button
-        className={`${props.className} ${styles.btn}`}
+        className={`${props.className} ${styles.btn} ${styles[props.buttonAnimation]}`}
         value={props.value}
         onClick={props.onClick}>
         {props.text}

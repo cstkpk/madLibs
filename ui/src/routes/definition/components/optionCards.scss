@@ -16,20 +16,6 @@
   box-shadow: 0 1.5rem 4rem rgba($colorBlack, 0.15);
   transition: transform 0.6s;
 
-  // &__icon {
-  //   font-size: 6rem;
-  //   margin-bottom: 0.5rem;
-  //   display: inline-block;
-  //   background-color: linear-gradient(
-  //     to right,
-  //     $colorBluePrimary,
-  //     $colorBlueDark
-  //   );
-  //   -webkit-background-clip: text; /* This mixed with making the text color transparent makes it so the background image appears as the text color */
-  //   background-clip: text;
-  //   color: transparent;
-  // }
-
   &:hover {
     transform: translateY(-1.5rem) scale(1.03);
   }
@@ -48,4 +34,8 @@
     font-size: $fsDefault;
     color: $colorGreyDark2;
   }
+}
+
+.text {
+  display: inline-block;
 }

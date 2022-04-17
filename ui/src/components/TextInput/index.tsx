@@ -15,7 +15,7 @@ interface Props {
   value: string;
 }
 
-const TextInput: React.FC<Props> = (props) => {
+const TextInput: React.FC<Props> = (props: Props) => {
 
   return (
     <div className={`${styles.container} ${props.className}`}>

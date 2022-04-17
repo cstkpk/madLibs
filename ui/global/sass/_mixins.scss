@@ -6,7 +6,7 @@
   border-radius: 100px;
 }
 
-@mixin buttonAnimation($translateY) {
+@mixin buttonHover($translateY) {
   transition: all 0.5s;
 
   &:hover {

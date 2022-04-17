@@ -10,5 +10,27 @@
   margin-bottom: 15px;
   width: 93%;
   border: 1px solid $colorBlueDark;
-  @include buttonAnimation(translateY(-3px));
+}
+
+.hover {
+  @include buttonHover(translateY(-3px));
+}
+
+.darken {
+  transition: all 0.5s;
+
+  &:hover {
+    color: darken($colorGreyDark1, 5);
+    background-color: rgba($colorBluePrimary, 0.1);
+    cursor: pointer;
+  }
+
+  &:active {
+    transform: translateY(1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
