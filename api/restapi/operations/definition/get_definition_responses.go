@@ -104,7 +104,7 @@ func (o *GetDefinitionNotFound) WriteResponse(rw http.ResponseWriter, producer r
 // GetDefinitionInternalServerErrorCode is the HTTP code returned for type GetDefinitionInternalServerError
 const GetDefinitionInternalServerErrorCode int = 500
 
-/*GetDefinitionInternalServerError Internal service error
+/*GetDefinitionInternalServerError Internal server error
 
 swagger:response getDefinitionInternalServerError
 */

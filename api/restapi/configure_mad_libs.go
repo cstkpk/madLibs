@@ -13,6 +13,7 @@ import (
 	"github.com/cstkpk/dictionary/api/restapi/operations"
 	"github.com/cstkpk/dictionary/api/restapi/operations/definition"
 	"github.com/cstkpk/dictionary/api/restapi/operations/ready"
+	"github.com/cstkpk/dictionary/api/restapi/operations/register"
 )
 
 //go:generate swagger generate server --target ../../api --name MadLibs --spec ../swagger.yaml --principal interface{}
@@ -44,6 +45,9 @@ func configureAPI(api *operations.MadLibsAPI) http.Handler {
 
 	// GET /definition
 	api.DefinitionGetDefinitionHandler = definition.GetDefinitionHandlerFunc(definition.Get)
+
+	// POST /register
+	api.RegisterPostRegisterHandler = register.PostRegisterHandlerFunc(register.Post)
 
 	api.PreServerShutdown = func() {}
 

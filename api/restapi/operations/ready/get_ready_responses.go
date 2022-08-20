@@ -60,7 +60,7 @@ func (o *GetReadyOK) WriteResponse(rw http.ResponseWriter, producer runtime.Prod
 // GetReadyInternalServerErrorCode is the HTTP code returned for type GetReadyInternalServerError
 const GetReadyInternalServerErrorCode int = 500
 
-/*GetReadyInternalServerError Internal service error
+/*GetReadyInternalServerError Internal server error
 
 swagger:response getReadyInternalServerError
 */

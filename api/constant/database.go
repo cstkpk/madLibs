@@ -10,10 +10,14 @@ var DBs = databases{
 }
 
 type dictionaryTables struct {
-	Entries string
+	Entries       string
+	UserAccounts  string
+	UserPasswords string
 }
 
-// IC holds the tables within the IceCream DB
+// DT holds the tables within the Dictionary DB
 var DT = dictionaryTables{
-	Entries: DBs.Dictionary + ".entries",
+	Entries:       DBs.Dictionary + ".entries",
+	UserAccounts:  DBs.Dictionary + ".userAccounts",
+	UserPasswords: DBs.Dictionary + ".userPasswords",
 }

@@ -63,7 +63,7 @@ func init() {
             }
           },
           "500": {
-            "description": "Internal service error",
+            "description": "Internal server error",
             "schema": {
               "$ref": "#/definitions/ReturnCode"
             }
@@ -91,7 +91,53 @@ func init() {
             }
           },
           "500": {
-            "description": "Internal service error",
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "description": "Create a user account by inserting a user into the users table\nalong with any credentials and account information\n",
+        "tags": [
+          "register"
+        ],
+        "summary": "Create user account",
+        "parameters": [
+          {
+            "description": "new user account information",
+            "name": "newUserAccount",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewUserAccount"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "400": {
+            "description": "Bad requests",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
             "schema": {
               "$ref": "#/definitions/ReturnCode"
             }
@@ -128,6 +174,29 @@ func init() {
           "type": "string"
         },
         "wordType": {
+          "type": "string"
+        }
+      }
+    },
+    "NewUserAccount": {
+      "type": "object",
+      "required": [
+        "email",
+        "password",
+        "passwordConfirm",
+        "username"
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "passwordConfirm": {
+          "type": "string"
+        },
+        "username": {
           "type": "string"
         }
       }
@@ -193,7 +262,7 @@ func init() {
             }
           },
           "500": {
-            "description": "Internal service error",
+            "description": "Internal server error",
             "schema": {
               "$ref": "#/definitions/ReturnCode"
             }
@@ -221,7 +290,53 @@ func init() {
             }
           },
           "500": {
-            "description": "Internal service error",
+            "description": "Internal server error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "default": {
+            "description": "Unexpected error",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "description": "Create a user account by inserting a user into the users table\nalong with any credentials and account information\n",
+        "tags": [
+          "register"
+        ],
+        "summary": "Create user account",
+        "parameters": [
+          {
+            "description": "new user account information",
+            "name": "newUserAccount",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/NewUserAccount"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "400": {
+            "description": "Bad requests",
+            "schema": {
+              "$ref": "#/definitions/ReturnCode"
+            }
+          },
+          "500": {
+            "description": "Internal server error",
             "schema": {
               "$ref": "#/definitions/ReturnCode"
             }
@@ -258,6 +373,29 @@ func init() {
           "type": "string"
         },
         "wordType": {
+          "type": "string"
+        }
+      }
+    },
+    "NewUserAccount": {
+      "type": "object",
+      "required": [
+        "email",
+        "password",
+        "passwordConfirm",
+        "username"
+      ],
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        },
+        "passwordConfirm": {
+          "type": "string"
+        },
+        "username": {
           "type": "string"
         }
       }

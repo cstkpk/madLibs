@@ -21,6 +21,7 @@ import (
 
 	"github.com/cstkpk/dictionary/api/restapi/operations/definition"
 	"github.com/cstkpk/dictionary/api/restapi/operations/ready"
+	"github.com/cstkpk/dictionary/api/restapi/operations/register"
 )
 
 // NewMadLibsAPI creates a new MadLibs instance
@@ -50,6 +51,9 @@ func NewMadLibsAPI(spec *loads.Document) *MadLibsAPI {
 		}),
 		ReadyGetReadyHandler: ready.GetReadyHandlerFunc(func(params ready.GetReadyParams) middleware.Responder {
 			return middleware.NotImplemented("operation ready.GetReady has not yet been implemented")
+		}),
+		RegisterPostRegisterHandler: register.PostRegisterHandlerFunc(func(params register.PostRegisterParams) middleware.Responder {
+			return middleware.NotImplemented("operation register.PostRegister has not yet been implemented")
 		}),
 	}
 }
@@ -91,6 +95,8 @@ type MadLibsAPI struct {
 	DefinitionGetDefinitionHandler definition.GetDefinitionHandler
 	// ReadyGetReadyHandler sets the operation handler for the get ready operation
 	ReadyGetReadyHandler ready.GetReadyHandler
+	// RegisterPostRegisterHandler sets the operation handler for the post register operation
+	RegisterPostRegisterHandler register.PostRegisterHandler
 
 	// ServeError is called when an error is received, there is a default handler
 	// but you can set your own with this
@@ -173,6 +179,9 @@ func (o *MadLibsAPI) Validate() error {
 	}
 	if o.ReadyGetReadyHandler == nil {
 		unregistered = append(unregistered, "ready.GetReadyHandler")
+	}
+	if o.RegisterPostRegisterHandler == nil {
+		unregistered = append(unregistered, "register.PostRegisterHandler")
 	}
 
 	if len(unregistered) > 0 {
@@ -270,6 +279,10 @@ func (o *MadLibsAPI) initHandlerCache() {
 		o.handlers["GET"] = make(map[string]http.Handler)
 	}
 	o.handlers["GET"]["/ready"] = ready.NewGetReady(o.context, o.ReadyGetReadyHandler)
+	if o.handlers["POST"] == nil {
+		o.handlers["POST"] = make(map[string]http.Handler)
+	}
+	o.handlers["POST"]["/register"] = register.NewPostRegister(o.context, o.RegisterPostRegisterHandler)
 }
 
 // Serve creates a http handler to serve the API over HTTP

@@ -34,6 +34,7 @@ func init() {
 }
 
 // GetCallInfo retrieves package and function name at the stack level where the log occurs
+// This is meant to be used as the top-level log (because top-level log as the file name built in)
 func GetCallInfo() string {
 	pc, _, _, _ := runtime.Caller(1)
 	parts := strings.Split(runtime.FuncForPC(pc).Name(), ".")
@@ -46,6 +47,8 @@ func GetCallInfo() string {
 	return pkg + "." + funcName + "():"
 }
 
+// GetLineInfo retrieves the same info as GetCallInfo but preceeded by the file name
+// This is meant to be used everywhere other than the top-level log (because top-level log has the file name built in)
 func GetLineInfo() string {
 	pc, fileAbsPath, line, _ := runtime.Caller(1)
 	parts := strings.Split(runtime.FuncForPC(pc).Name(), ".")

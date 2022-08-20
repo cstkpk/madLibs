@@ -19,6 +19,7 @@ require (
 	github.com/mitchellh/mapstructure v1.4.2 // indirect
 	github.com/rs/cors v1.8.0 // indirect
 	go.mongodb.org/mongo-driver v1.7.4 // indirect
-	golang.org/x/net v0.0.0-20211111160137-58aab5ef257a
+	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d // indirect
+	golang.org/x/net v0.0.0-20211112202133-69e39bad7dc2
 	golang.org/x/sys v0.0.0-20211110154304-99a53858aa08 // indirect
 )
